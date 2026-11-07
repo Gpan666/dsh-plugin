@@ -1,0 +1,8 @@
+# model-failover: switch to the next healthy model candidate before the next
+# agent step runs, when the current model has been marked unhealthy.
+#
+# The plugin awaits `agents` (the agent registry) and reads the `llm` service
+# directly through ctx.get('llm'), so no extra row is needed for it here.
+- insert:
+    - id: model-failover
+      name: dsh-plugin-model-failover
